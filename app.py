@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 CORS(app)
 
+
 # Load data from JSON files
 def load_data(filename):
     with open(filename, 'r') as f:
@@ -39,4 +40,4 @@ def handle_rentals():
         return jsonify(rental), 201
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=5000)
